@@ -7,42 +7,46 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-        <title>QFA100 Team - Landing Page</title>
+        <title>LANDING SOON - QFA100</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
     </head>
+
     <body>
+        <!-- Opening Discussion Text (In Grey) -->
         <div class="jumbotron text-center">
             <h1>QFA100 Team</h1>
             <h3>WorldFlight 2022</h3>
             <p>
-                WorldFlight 2022 is the formal introduction of the QFA100 Unoffocial WorldFlight Team into the spotlight.<br>
-                We look forward to developing this website, and brining it to the limelight for the 2022 WorldFlight introduction.
+                WorldFlight 2022 is the third itteration of the QFA100 Unofficial Team!
+                <br><br>This team was organised by Linn M in 2019, and during 2020, and 2021 recruited a number of staff members who now make up the core staff team for QFA100 2022!
             </p>
         </div>
 
         <div class="container">
+            <!-- First Row of Details (text) -->
             <div class="row">
-                <div class="col-sm-6">
-                    <h4>QFA100 Team - Staff</h4>
-                    <p>During 2020 and 2021 there have been a number of key staff involved in this team, and in 2022 I am glad to formally introduce this team to the VATSIM Network.
-                        <br><br>All of these team members are looking forward to this years worldflight!
-                    </p>
-                </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <h4>Official Discord</h4>
                     <p>We will be introducing an official discord channel for community members to join in and support the team during the week.
-                        <br><br>More information will be released at a later stage.
+                        <br><br>More information will be released at a later stage, in conjunction with the new Website!
+                    </p>
+                </div>
+                <div class="col-sm-8">
+                    <h4>Website Details</h4>
+                    <p>This website will be the one stop shop for all things QFA100 related. Details about who is flying, when they are flying, and stats from each flight will be made available on this website.
+                        <br><br>There will be additional resources required for the Pilots flying, and this site will suit that purpose!
                     </p>
                 </div>
             </div> 
+            <!-- Second row of details (links) -->
+            <div class="row">
+                <div class="">
+                    <a href="https://www.vatsim.net/" target="_blank">VATSIM</a>
+                    <a href="https://www.worldflight.com.au/web/" target="_blank">WorldFlight Website</a>
+                </div>
+            </div>
         </div>
     </body>
 </html>
