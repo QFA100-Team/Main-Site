@@ -15,11 +15,6 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
-            },
-
-            .loader {
-                border-top: 16px solid blue;
-                border-bottom: 16px solid blue;
             }
         </style>
     </head>
@@ -31,7 +26,6 @@
                 WorldFlight 2022 is the formal introduction of the QFA100 Unoffocial WorldFlight Team into the spotlight.<br>
                 We look forward to developing this website, and brining it to the limelight for the 2022 WorldFlight introduction.
             </p>
-            <div class="loader"></div>
         </div>
 
         <div class="container">
@@ -39,13 +33,13 @@
                 <div class="col-sm-6">
                     <h4>QFA100 Team - Staff</h4>
                     <p>During 2020 and 2021 there have been a number of key staff involved in this team, and in 2022 I am glad to formally introduce this team to the VATSIM Network.
-                        <br>All of these team members are looking forward to this years worldflight!
+                        <br><br>All of these team members are looking forward to this years worldflight!
                     </p>
                 </div>
                 <div class="col-sm-6">
                     <h4>Official Discord</h4>
                     <p>We will be introducing an official discord channel for community members to join in and support the team during the week.
-                        <br>More information will be released at a later stage.
+                        <br><br>More information will be released at a later stage.
                     </p>
                 </div>
             </div> 
