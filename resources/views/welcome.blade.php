@@ -41,7 +41,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    WorldFlight!
+                                    WorldFlight 2022 is coming!
                                 </div>
                             </div>
                         </div>
