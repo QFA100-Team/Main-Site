@@ -7,7 +7,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-        <title>LANDING SOON - QFA100</title>
+        <title>QFA100 - LANDING SOON</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
     <body>
         <!-- Opening Discussion Text (In Grey) -->
         <div class="jumbotron text-center">
+            <img style="align: center;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
             <h1>QFA100 Team</h1>
             <h3>WorldFlight 2022</h3>
             <p>
