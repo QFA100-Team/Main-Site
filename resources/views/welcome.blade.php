@@ -44,12 +44,10 @@
             </div> 
             <!-- Second row of details (links) -->
             <div style="align: center;" class="row">
-                <div class="col-sm-4">
-                    <h4>Some Links!</h4>
-                    <a href="https://www.vatsim.net/" target="_blank">VATSIM</a><br>
-                    <a href="https://vatpac.org/" target="_blank">VATPAC</a><br>
-                    <a href="https://www.worldflight.com.au/web/" target="_blank">WorldFlight Website</a><br>
-                </div>
+                <h4>Some Links!</h4>
+                <a href="https://www.vatsim.net/" target="_blank">VATSIM</a><br>
+                <a href="https://vatpac.org/" target="_blank">VATPAC</a><br>
+                <a href="https://www.worldflight.com.au/web/" target="_blank">WorldFlight Website</a><br>
             </div>
         </div>
     </body>
