@@ -43,8 +43,8 @@
                 </div>
             </div> 
             <!-- Second row of details (links) -->
-            <div class="row">
-                <div style="text-align: center;" class="">
+            <div style="align: center;" class="row">
+                <div class="col-sm-4">
                     <h4>Some Links!</h4>
                     <a href="https://www.vatsim.net/" target="_blank">VATSIM</a><br>
                     <a href="https://vatpac.org/" target="_blank">VATPAC</a><br>
