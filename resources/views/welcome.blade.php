@@ -16,12 +16,13 @@
     <body>
         <!-- Opening Discussion Text (In Grey) -->
         <div class="jumbotron text-center">
-            <img style="align: center; max-width: 20%;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
+            <img style="align: center; max-width: 25%;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
             <h1>QFA100 Team</h1>
             <h3>WorldFlight 2022</h3>
             <p>
                 WorldFlight 2022 is the third itteration of the QFA100 Unofficial Team!
-                <br><br>This team was organised by Linn M in 2019, and during 2020, and 2021 recruited a number of staff members who now make up the core staff team for QFA100 2022!
+                <br><br>Beginning in 2019, Linn M began flying the QFA100 Callsign during WorldFlight 2019.
+                <br><br>During 2020, Linn approached a number of dedicated VATPAC and VATSIM Members with the proposal to fly a group callsign. In 2022, we are delighted to bring the QFA100 Team!
             </p>
         </div>
 
@@ -29,7 +30,7 @@
             <!-- First Row of Details (text) -->
             <div class="row">
                 <div class="col-sm-4">
-                    <h4>Official Discord</h4>
+                    <h4>Discord Server</h4>
                     <p>We will be introducing an official discord channel for community members to join in and support the team during the week.
                         <br><br>More information will be released at a later stage, in conjunction with the new Website!
                     </p>
@@ -43,9 +44,11 @@
             </div> 
             <!-- Second row of details (links) -->
             <div class="row">
-                <div class="">
-                    <a href="https://www.vatsim.net/" target="_blank">VATSIM</a>
-                    <a href="https://www.worldflight.com.au/web/" target="_blank">WorldFlight Website</a>
+                <div style="text-align: center;" class="">
+                    <h4>Some Links!</h4>
+                    <a href="https://www.vatsim.net/" target="_blank">VATSIM</a><br>
+                    <a href="https://vatpac.org/" target="_blank">VATPAC</a><br>
+                    <a href="https://www.worldflight.com.au/web/" target="_blank">WorldFlight Website</a><br>
                 </div>
             </div>
         </div>
