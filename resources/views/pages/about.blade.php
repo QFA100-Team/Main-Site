@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-About Page!
+About Page! s
 @endsection
