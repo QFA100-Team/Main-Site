@@ -15,10 +15,10 @@
 
     <body>
         <!-- Opening Discussion Text (In Grey) -->
-        <div class="jumbotron text-center">
-            <img style="align: center; max-width: 25%;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
-            <h1>QFA100 Team</h1>
-            <h3>WorldFlight 2022</h3>
+        <div style="padding: 20px;" class="jumbotron text-center">
+            <img style="align: center; max-width: 30%; padding-bottom: 10px;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
+            <h1><b>QFA100 Team</b></h1>
+            <h2>WorldFlight 2022</h2>
             <p>
                 WorldFlight 2022 is the third itteration of the QFA100 Unofficial Team!
                 <br><br>Beginning in 2019, Linn M began flying the QFA100 Callsign during WorldFlight 2019.
