@@ -17,12 +17,16 @@
         <!-- Opening Discussion Text (In Grey) -->
         <div style="padding: 20px;" class="jumbotron text-center">
             <img style="align: center; max-width: 30%; padding-bottom: 10px;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
-            <h1><b>QFA100 Team</b></h1>
-            <h2>WorldFlight 2022</h2>
+            <h1><b>QFA100 Team Website</b></h1>
+            <h3>Unofficial WorldFlight Team</h3>
             <p>
-                WorldFlight 2022 is the third itteration of the QFA100 Unofficial Team!
-                <br><br>Beginning in 2019, Linn M began flying the QFA100 Callsign during WorldFlight 2019.
-                <br><br>During 2020, Linn approached a number of dedicated VATPAC and VATSIM Members with the proposal to fly a group callsign. In 2022, we are delighted to bring the QFA100 Team!!!
+                WorldFlight 2022 is the third itteration of the QFA100 Team!
+                <br><br><b><u>Some brief history:</u></b><br>
+                Linn M began flying the QFA100 Callsign during WorldFlight 2019 alone, and sparked the idea for a virtual group of pilots, flying one callsign, around the world, for one whole week.
+                <br>During 2020, Linn approached a number of dedicated VATPAC and VATSIM Members with the proposal to fly a group callsign, and during 2020 and 2021, QFA100 was involved in all legs during WorldFlight! <br>
+                In 2022, we are delighted to bring back the QFA100 Team for our third year of operation!<br>
+                The team is looking forward to being involved in WorldFlight 2022!<br><br>
+                Check out the WorldFlight 2022 Route <a href="https://cdn.discordapp.com/attachments/477414012489826324/1005309795806478446/2022_Route_Final.jpg" target="_blank">here</a>!.
             </p>
         </div>
 
@@ -31,8 +35,9 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h4>Discord Server</h4>
-                    <p>We will be introducing an official discord channel for community members to join in and support the team during the week.
-                        <br><br>More information will be released at a later stage, in conjunction with the new Website!
+                    <p>We will be introducing an official discord channel for community members to join 
+                        in and support the team during the week.
+                        <br><br>More information will be released closer to WorldFlight 2022, in conjunction with the new Website!
                     </p>
                 </div>
                 <div class="col-sm-8">

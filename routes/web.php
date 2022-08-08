@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Landing Page (temp)
 Route::get('/', function () {
     return view('landingpage');
 });
 
-Route::get('/home', function () {
-    return view('pages.home');
-});
+//Pages Controller (Main Pages)
+Route::get('/home', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/pilots', 'PagesController@pilots');
+Route::get('/route', 'PagesController@route');

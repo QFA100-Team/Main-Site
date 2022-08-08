@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-Home Page for {{$var}}!!!
+About Page!
 @endsection
