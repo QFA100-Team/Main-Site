@@ -22,7 +22,7 @@
             <p>
                 WorldFlight 2022 is the third itteration of the QFA100 Unofficial Team!
                 <br><br>Beginning in 2019, Linn M began flying the QFA100 Callsign during WorldFlight 2019.
-                <br><br>During 2020, Linn approached a number of dedicated VATPAC and VATSIM Members with the proposal to fly a group callsign. In 2022, we are delighted to bring the QFA100 Team!
+                <br><br>During 2020, Linn approached a number of dedicated VATPAC and VATSIM Members with the proposal to fly a group callsign. In 2022, we are delighted to bring the QFA100 Team!!!
             </p>
         </div>
 
