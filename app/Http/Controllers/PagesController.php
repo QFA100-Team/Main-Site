@@ -8,18 +8,27 @@ class PagesController extends Controller
 {
     public function index(){
         $var = 'QFA100 Team';
-        return view('pages.home', compact('var'));
+        $sb = 'test';
+        return view('pages.home', compact('var', 'sb'));
     }
 
     public function about(){
         return view('pages.about');
     }
 
+    public function news(){
+        return view('pages.news');
+    }
+
     public function team(){
-        return view('pages.pilots');
+        return view('pages.team');
     }
 
     public function route(){
         return view('pages.route');
+    }
+
+    public function roster(){
+        return view('pages.roster');
     }
 }
