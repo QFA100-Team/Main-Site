@@ -22,6 +22,7 @@
             position: relative;
             width: 36px;
             font-size: 24px;
+            
           }
           
           .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
