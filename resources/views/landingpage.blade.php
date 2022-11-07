@@ -17,7 +17,7 @@
         <!-- Opening Discussion Text (In Grey) -->
         <div class="jumbotron text-center">
             <img style="align: center; max-width: 25%;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
-            <h1>QFA100 Team</h1>
+            <h1>QFA100 Team!</h1>
             <h3>WorldFlight 2023</h3>
             <p>
                 WorldFlight 2023 is the forth itteration of the QFA100 Unofficial Team!
