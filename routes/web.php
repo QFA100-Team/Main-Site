@@ -23,5 +23,7 @@ Route::get('/home', 'PagesController@index');
 Route::get('/about-us', 'PagesController@about');
 Route::get('/our-team', 'PagesController@team');
 Route::get('/route', 'PagesController@route');
+Route::get('/pilot-roster', 'PagesController@roster');
 
-//Account Controller
+//News Controller
+Route::resource('news', 'NewsController');

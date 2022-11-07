@@ -1,5 +1,5 @@
 @extends('Layouts.app')
 
 @section('content')
-About Page! s
+QFA100 About Page.
 @endsection
