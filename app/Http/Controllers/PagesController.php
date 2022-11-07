@@ -15,7 +15,7 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
-    public function pilots(){
+    public function team(){
         return view('pages.pilots');
     }
 
