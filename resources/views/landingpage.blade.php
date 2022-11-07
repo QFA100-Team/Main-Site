@@ -51,11 +51,11 @@
                     <h4>Watch WorldFlight 2022</h4>
                     <p>Watch some of the simulators during WorldFlight 2022 below
                         <ul>
-                            <li>WorldFlight Team Simfest - <a href="https://www.twitch.tv/simfestuk">BAW47C</a></li>
-                            <li>WorldFlight Team Velocity UK - <a href="https://www.twitch.tv/velocity_worldflight">NPT11W</a></li>
-                            <li>WorldFlight Giant 1471 - <a href="https://www.twitch.tv/worldflight_gti1471">GTI1471</a></li>
-                            <li>WorldFlight Team Airbus - <a href="https://www.twitch.tv/worldflighthamilton">ANZ361</a></li>
-                            <li>WorldFlight Australia - <a href="https://www.twitch.tv/qfa25">QFA25</a></li>
+                            <li>WorldFlight Team Simfest - <a href="https://www.twitch.tv/simfestuk" target="_blank">BAW47C</a></li>
+                            <li>WorldFlight Team Velocity UK - <a href="https://www.twitch.tv/velocity_worldflight" target="_blank">NPT11W</a></li>
+                            <li>WorldFlight Giant 1471 - <a href="https://www.twitch.tv/worldflight_gti1471" target="_blank">GTI1471</a></li>
+                            <li>WorldFlight Team Airbus - <a href="https://www.twitch.tv/worldflighthamilton" target="_blank">ANZ361</a></li>
+                            <li>WorldFlight Australia - <a href="https://www.twitch.tv/qfa25" target="_blank">QFA25</a></li>
                         </ul>
                     </p>
                 </div>
