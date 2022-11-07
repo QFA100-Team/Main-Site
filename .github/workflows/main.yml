@@ -14,6 +14,6 @@ jobs:
     - name: 📂 Sync GitHub & Server Files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: sg2plzcpnl486124.prod.sin2.secureserver.net
+        server: ftp.qfa100.org
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
