@@ -33,12 +33,13 @@ SQL:::
 **Static Pages**
 - Homepage (/home)
 - About Us (/about-us)
-- Team (/our-team) ~~~ Joshua
-  - Dynamic Individual Pages...
 - Route (/route)
+
+**Controller Pages (Multiple Pages in one catagory)**
+- News (/news) ~~~ Josh
+- Our Team (/our-team) ~~~ Josh
 - Flight Roster (/pilot-roster)
-- Account Page (/account)
-- News (/news) ~~~ Joshua
+- Account (/account)
 
 **Dynamic Pages**
 - Map of User Connections to VATSIM (/map)
