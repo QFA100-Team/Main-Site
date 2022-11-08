@@ -3,17 +3,16 @@
 **ToDo**
 - DBs to be made
 - - Users (Auto Assigned Pilot Access)
-    - UID (AutoAssigned)
+    - user_uid (AutoAssigned)
     - Name
     - DisplayName (Editable by User)
-    - Designator (Integer)
     - VATSIM_CID (Integer)
     - Email
     - Password
-    - DOB
-    - Position (Staff Position)
-    - Is Staff (0=no, 1=yes)
-    - Access Level (power on site)
+    - dob
+    - is_staff (0=no, 1=yes)
+    - staff_pos (Staff Position)
+    - power_access (power on site)
 SQL::: 
 
 - - Pilots Details 
@@ -23,22 +22,30 @@ SQL:::
     - WF2022
 
 - - News ~~~ DONE (Message Josh for SQL Injection Code)
-    - Title
-    - Author
-    - Content
-    - Timestamp
-    - Type
+    - id {unique}
+    - title
+    - news_type
+    - author
+    - author_UID
+    - content
+    - created_at
 SQL::: 
 
 **Static Pages**
 - Homepage (/home)
 - About Us (/about-us)
-- Team (/our-team) ~~~ Joshua
-  - Dynamic Individual Pages...
 - Route (/route)
+
+**Controller Pages (Multiple Pages in one catagory)**
+- News (/news) ~~~ Josh
+  - /{id} shows specific news article
+  - /create makes new news article
+  - /{id}/edit edits specific news article (button only available to admins).
+- Our Team (/our-team) ~~~ Josh
+  - /{id} shows specific member
 - Flight Roster (/pilot-roster)
-- Account Page (/account)
-- News (/news) ~~~ Joshua
+- - /{id} Flight Number Details
+- Account (/account)
 
 **Dynamic Pages**
 - Map of User Connections to VATSIM (/map)

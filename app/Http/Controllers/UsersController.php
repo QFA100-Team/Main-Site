@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
-use App\Models\User;
+use App\Models\Users;
 
-class NewsController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //return News::all();
-        $news = News::orderBy('id', 'desc')->simplePaginate(5);
-        return view('news.index')->with('news', $news);
+        $user = User::all();
     }
 
     /**
@@ -49,10 +46,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        $news = News::find($id);
-        //return $news->author_uid;
-        $author = User::all()->where('user_uid', $news->author_uid);
-        return view('news.show')->with('news', $news)->with('author', $author);
+        //
     }
 
     /**

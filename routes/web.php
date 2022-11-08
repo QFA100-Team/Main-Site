@@ -27,3 +27,6 @@ Route::get('/pilot-roster', 'PagesController@roster');
 
 //News Controller
 Route::resource('news', 'NewsController');
+
+//User Controller
+Route::resource('user', 'UsersController');
