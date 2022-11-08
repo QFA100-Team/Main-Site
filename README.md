@@ -5,14 +5,14 @@
 - - Users (Auto Assigned Pilot Access)
     - user_uid (AutoAssigned)
     - Name
-    - DisplayName (Editable by User)
-    - VATSIM_CID (Integer)
+    - display_name (Editable by User)
+    - vatsim_cid (Integer)
     - Email
     - Password
     - dob
     - is_staff (0=no, 1=yes)
-    - staff_pos (Staff Position)
-    - power_access (power on site)
+    - staff_pos (Staff Position) 0=member, 1=pilot, 2=marketing, 3=operations, 4=tech, 5=executive, 6=founder, 7=admin
+    - power_access (power on site) 0=member, 1=pilot, 2, marketing, 3=operations, 4=tech, 5=admin
 SQL::: 
 
 - - Pilots Details 
