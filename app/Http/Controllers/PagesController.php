@@ -16,14 +16,6 @@ class PagesController extends Controller
         return view('pages.about');
     }
 
-    public function news(){
-        return view('pages.news');
-    }
-
-    public function team(){
-        return view('pages.team');
-    }
-
     public function route(){
         return view('pages.route');
     }

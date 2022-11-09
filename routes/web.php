@@ -21,7 +21,6 @@ Route::get('/', function () {
 //Pages Controller (Main Pages)
 Route::get('/home', 'PagesController@index');
 Route::get('/about-us', 'PagesController@about');
-Route::get('/our-team', 'PagesController@team');
 Route::get('/route', 'PagesController@route');
 Route::get('/pilot-roster', 'PagesController@roster');
 
@@ -29,4 +28,7 @@ Route::get('/pilot-roster', 'PagesController@roster');
 Route::resource('news', 'NewsController');
 
 //User Controller
-Route::resource('user', 'UsersController');
+Route::resource('account', 'UsersController');
+
+//our-team Controller
+Route::resource('our-team', 'TeamController');
