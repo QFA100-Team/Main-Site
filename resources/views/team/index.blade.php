@@ -60,11 +60,9 @@
     <br>
 </p><br>
 
-
-
-{{$staff}}
 <!-- Staff Section -->
 <h1>Staff</h1>
+<p>Below shows the vast number of members, whom dedicate their time to make this team the best it can be!</p>
 <div class="row" style="text-align: center;">
   @foreach($staff as $staff)
   @if ($staff->staff_pos == "1") <?php $position = "Marketing Team"; $style = "color: #2072f5"; ?> @endif
@@ -74,8 +72,8 @@
   @if ($staff->staff_pos == "5") <?php $position = "Managing Director"; $style = "color: #7c20f5";?> @endif
   <div class="col-sm-4 py-2">
     <div class="card card-body h-100">
-      <h2>{{$staff->name}}</h2>
-      <p class="title">QFA{{$staff->user_uid}} - {{$position}}</p>
+      <h2>{{$staff->display_name}}</h2>
+      <p class="title">QFA{{$staff->user_uid}} - <x style="{{$style}}">{{$position}}</x></p>
       <p>{{$staff->staff_desc}}</p>
       <a href="our-team/qfa{{$staff->user_uid}}"><button class="button">View Profile</button></a>
     </div>
@@ -83,15 +81,14 @@
   @endforeach
 </div><br><br>
 
-{{$pilot}}
 <!-- List of Pilots Section -->
   <h1>Pilots</h1>
-  <p>Complete List of Pilots for QFA100 Team!</p>
+  <p>Complete list of Pilots who are apart of this team.</p>
 <div class="row" style="text-align: center;">
   @foreach($pilot as $pilot)
   <div class="col-sm-3 py-2">
     <div class="card card-body h-100">
-      <h3>{{$pilot->name}}</h3>
+      <h3>{{$pilot->display_name}}</h3>
       <p class="title">QFA{{$pilot->user_uid}}</p>
       <a href="our-team/qfa{{$pilot->user_uid}}"><button class="button">View Profile</button></a>
     </div>
