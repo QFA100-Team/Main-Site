@@ -17,7 +17,7 @@ class NewsController extends Controller
     {
         //return News::all();
         $news = News::orderBy('id', 'desc')->simplePaginate(5);
-        return view('news.index')->with('news', $news);
+        return view('news.news-index')->with('news', $news);
     }
 
     /**
@@ -52,7 +52,7 @@ class NewsController extends Controller
         $news = News::find($id);
         //return $news->author_uid;
         $author = User::all()->where('user_uid', $news->author_uid);
-        return view('news.show')->with('news', $news)->with('author', $author);
+        return view('news.news-show')->with('news', $news)->with('author', $author);
     }
 
     /**

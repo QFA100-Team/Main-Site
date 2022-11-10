@@ -11,8 +11,20 @@
     - Password
     - dob
     - is_staff (0=no, 1=yes)
-    - staff_pos (Staff Position) 0=member, 1=marketing, 2=operations, 3=tech, 4=founder, 5=Executive Director,
-    - power_access (power on site) 0=member, 1=pilot, 2, marketing, 3=operations, 4=tech, 5=admin
+    - staff_pos (Staff Position) 
+      - 0=member, 
+      - 1=marketing, 
+      - 2=operations, 
+      - 3=tech, 
+      - 4=founder, 
+      - 5=Executive Director,
+    - power_access (power on site) 
+      - 0=member, 
+      - 1=pilot, 
+      - 2, marketing, 
+      - 3=operations, 
+      - 4=tech, 
+      - 5=admin
 SQL::: 
 
 - - Pilots Details 

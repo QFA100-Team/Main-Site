@@ -16,7 +16,7 @@ class TeamController extends Controller
     {
         $staff = User::all()->where('is_staff', 1);
         $pilot =  User::all()->where('is_pilot', 1);
-        return view('team.index')->with('staff', $staff)->with('pilot', $pilot);
+        return view('team.team-index')->with('staff', $staff)->with('pilot', $pilot);
     }
 
     /**
