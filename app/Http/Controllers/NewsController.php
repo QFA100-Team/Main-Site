@@ -51,8 +51,8 @@ class NewsController extends Controller
     {
         $news = News::find($id);
         //return $news->author_uid;
-        $author = User::all()->where('user_uid', $news->author_uid);
-        return view('news.news-show')->with('news', $news)->with('author', $author);
+        //$author = User::all()->where('user_uid', $news->author_uid);
+        return view('news.news-show')->with('news', $news);
     }
 
     /**

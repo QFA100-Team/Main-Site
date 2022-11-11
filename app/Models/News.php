@@ -13,4 +13,9 @@ class News extends Model
     public $primaryKey = 'id';
     //Timestamps
     public $timestamps = true;
+
+    //Get Author Details of News Post
+    public function author(){
+        return $this->hasOne(User::class, 'id', 'author_id');
+    }
 }

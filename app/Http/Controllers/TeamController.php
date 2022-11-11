@@ -48,7 +48,8 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::all()->where('u_callsign', $id);
+        return view ('team.team-show')->with('user', $user);
     }
 
     /**

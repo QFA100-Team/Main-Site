@@ -73,9 +73,9 @@
   <div class="col-sm-4 py-2">
     <div class="card card-body h-100">
       <h2>{{$staff->display_name}}</h2>
-      <p class="title">QFA{{$staff->user_uid}} - <x style="{{$style}}">{{$position}}</x></p>
+      <p class="title">{{Str::upper($staff->u_callsign)}} - <x style="{{$style}}">{{$position}}</x></p>
       <p>{{$staff->staff_desc}}</p>
-      <a href="our-team/qfa{{$staff->user_uid}}"><button class="button">View Profile</button></a>
+      <a href="our-team/{{$staff->u_callsign}}"><button class="button">View Profile</button></a>
     </div>
   </div>
   @endforeach
@@ -89,8 +89,8 @@
   <div class="col-sm-3 py-2">
     <div class="card card-body h-100">
       <h3>{{$pilot->display_name}}</h3>
-      <p class="title">QFA{{$pilot->user_uid}}</p>
-      <a href="our-team/qfa{{$pilot->user_uid}}"><button class="button">View Profile</button></a>
+      <p class="title">{{Str::upper($pilot->u_callsign)}}</p>
+      <a href="our-team/{{$pilot->u_callsign}}"><button class="button">View Profile</button></a>
     </div>
   </div>
   @endforeach
