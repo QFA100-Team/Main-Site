@@ -1,5 +1,9 @@
 @extends('Layouts.app')
 
 @section('content')
-{{$user}}
+
+@foreach($user as $user)@endforeach
+{{$user->display_name}}
+
+
 @endsection

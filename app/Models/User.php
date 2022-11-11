@@ -9,4 +9,8 @@ class User extends Model
 {
     //Table Name
     protected $table = 'users';
+
+    public function staff_details(){
+        return $this->hasOne(Staff::class, 'u_id', 'id');
+    }
 }

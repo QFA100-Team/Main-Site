@@ -65,16 +65,16 @@
 <p>Below shows the vast number of members, whom dedicate their time to make this team the best it can be!</p>
 <div class="row" style="text-align: center;">
   @foreach($staff as $staff)
-  @if ($staff->staff_pos == "1") <?php $position = "Marketing Team"; $style = "color: #2072f5"; ?> @endif
-  @if ($staff->staff_pos == "2") <?php $position = "Operations Team"; $style = "color: #2072f5";?> @endif
-  @if ($staff->staff_pos == "3") <?php $position = "Founder"; $style = "color: #25c059";?> @endif
-  @if ($staff->staff_pos == "4") <?php $position = "Technology Team"; $style = "color: #2072f5";?> @endif
-  @if ($staff->staff_pos == "5") <?php $position = "Managing Director"; $style = "color: #7c20f5";?> @endif
+  @if ($staff->staff_details->position == "1") <?php $style = "color: #2072f5"; ?> @endif
+  @if ($staff->staff_details->position == "2") <?php $style = "color: #2072f5";?> @endif
+  @if ($staff->staff_details->position == "3") <?php $style = "color: #25c059";?> @endif
+  @if ($staff->staff_details->position == "4") <?php $style = "color: #2072f5";?> @endif
+  @if ($staff->staff_details->position == "5") <?php $style = "color: #7c20f5";?> @endif
   <div class="col-sm-4 py-2">
     <div class="card card-body h-100">
       <h2>{{$staff->display_name}}</h2>
-      <p class="title">{{Str::upper($staff->u_callsign)}} - <x style="{{$style}}">{{$position}}</x></p>
-      <p>{{$staff->staff_desc}}</p>
+      <p class="title">{{Str::upper($staff->u_callsign)}} - <x style="{{$style}}">{{$staff->staff_details->title}}</x></p>
+      <p>{{$staff->staff_details->description}}</p>
       <a href="our-team/{{$staff->u_callsign}}"><button class="button">View Profile</button></a>
     </div>
   </div>
