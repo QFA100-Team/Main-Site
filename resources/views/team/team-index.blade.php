@@ -58,6 +58,12 @@
 <h1>Meet the Team</h1>
 <p>The QFA100 Team is made up of a vast number of team members, of which all provide differering staffing capacity within the QFA100 Team profile. Every member of QFA100 is a vital, and important member of the team, and we would not be where we are right now without their time and dedication.
     <br>
+    @if ($message = Session::get('error'))
+      <div class="alert alert-danger alert-block">
+	      <button type="button" class="close" data-dismiss="alert">×</button>	
+	      <strong>{{$message}}</strong>
+      </div>
+    @endif
 </p><br>
 
 <!-- Staff Section -->
@@ -65,17 +71,12 @@
 <p>Below shows the vast number of members, whom dedicate their time to make this team the best it can be!</p>
 <div class="row" style="text-align: center;">
   @foreach($staff as $staff)
-  @if ($staff->staff_details->position == "1") <?php $style = "color: #2072f5"; ?> @endif
-  @if ($staff->staff_details->position == "2") <?php $style = "color: #2072f5";?> @endif
-  @if ($staff->staff_details->position == "3") <?php $style = "color: #25c059";?> @endif
-  @if ($staff->staff_details->position == "4") <?php $style = "color: #2072f5";?> @endif
-  @if ($staff->staff_details->position == "5") <?php $style = "color: #7c20f5";?> @endif
   <div class="col-sm-4 py-2">
     <div class="card card-body h-100">
       <h2>{{$staff->display_name}}</h2>
-      <p class="title">{{Str::upper($staff->u_callsign)}} - <x style="{{$style}}">{{$staff->staff_details->title}}</x></p>
+      <p class="title">{{Str::upper($staff->u_callsign)}} - <x style="color: #{{$staff->staff_details->title_color}}">{{$staff->staff_details->title}}</x></p>
       <p>{{$staff->staff_details->description}}</p>
-      <a href="our-team/{{$staff->u_callsign}}"><button class="button">View Profile</button></a>
+      <a href="our-team/{{$staff->id}}"><button class="button">View Profile</button></a>
     </div>
   </div>
   @endforeach
@@ -90,7 +91,7 @@
     <div class="card card-body h-100">
       <h3>{{$pilot->display_name}}</h3>
       <p class="title">{{Str::upper($pilot->u_callsign)}}</p>
-      <a href="our-team/{{$pilot->u_callsign}}"><button class="button">View Profile</button></a>
+      <a href="our-team/{{$pilot->id}}"><button class="button">View Profile</button></a>
     </div>
   </div>
   @endforeach

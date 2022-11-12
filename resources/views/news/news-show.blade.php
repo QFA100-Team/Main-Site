@@ -13,13 +13,6 @@
 
 @section('content')
 
-<!-- Staff Position Code -->
-@if ($news->author->staff_pos == "1") <?php $position = "Marketing Team"; $style = "color: #2072f5"; ?> @endif
-@if ($news->author->staff_pos == "2") <?php $position = "Operations Team"; $style = "color: #2072f5";?> @endif
-@if ($news->author->staff_pos  == "3") <?php $position = "Founder"; $style = "color: #25c059";?> @endif
-@if ($news->author->staff_pos  == "4") <?php $position = "Technology Team"; $style = "color: #2072f5";?> @endif
-@if ($news->author->staff_pos  == "5") <?php $position = "Managing Director"; $style = "color: #7c20f5";?> @endif
-
 <div class="row">
     <!-- Post Details -->
     <div class="col-md-8">
@@ -48,7 +41,7 @@
                     <h5 class="card-header h5">Author Details</h5>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item"><b>Name:</b> <a style="color:inherit; text-decoration: none;" target="_blank" href="{{config('app.url')}}/our-team/{{$news->author->u_callsign}}">{{$news->author->display_name}} - {{Str::upper($news->author->u_callsign)}}</a></li>
-                      <li class="list-group-item"><b>Position:</b> <x style="{{$style}}">{{$position}}</x></li>
+                      <li class="list-group-item"><b>Position:</b> <x style="color: #{{$news->author_roles->title_color}}">{{$news->author_roles->title}}</x></li>
                     </ul>
                   </div>
 

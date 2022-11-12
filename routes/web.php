@@ -24,6 +24,9 @@ Route::get('/about-us', 'PagesController@about');
 Route::get('/route', 'PagesController@route');
 Route::get('/pilot-roster', 'PagesController@roster');
 
+//AutoUpdates for Databases
+Route::get('admin/updates/vatsim-db', 'AutoUpdatesController@dbupdate');
+
 //News Controller
 Route::resource('news', 'NewsController');
 

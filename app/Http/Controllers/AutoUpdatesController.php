@@ -3,22 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Models\User;
-use App\Models\Staff;
+use App\Models\VATSIM;
 
-class TeamController extends Controller
+class AutoUpdatesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function dbupdate()
     {
-        $staff = User::all()->where('is_staff', 1);
-        $pilot = User::all()->where('is_pilot', 1)->where('is_staff', 0);
-        //return User::with('staff_details')->get();
-        return view('team.team-index')->with('staff', $staff)->with('pilot', $pilot);
+        $user = User::all();
+
+        foreach($user as $user){
+            $id = $user->vatsim_cid;
+
+            $vatsim_api = Http::get("api.vatsim.net/api/ratings/$id")->json();
+            //return $vatsim_api;
+
+            //Values from Search
+            $cid = $vatsim_api['id'];
+            $rating = $vatsim_api['rating'];
+            $pilotrating = $vatsim_api['pilotrating'];
+            $region = $vatsim_api['region'];
+            $division = $vatsim_api['division'];
+            $subdivision = $vatsim_api['subdivision'];
+            $last_rating = $vatsim_api['lastratingchange'];
+
+            VATSIM::where('cid', $id)->update([
+                'atc_rating' => $vatsim_api['rating'],
+                'pilot_rating' => $vatsim_api['pilotrating'],
+                'region' => $vatsim_api['region'],
+                'division' => $vatsim_api['division'],
+                'subdivision' => $vatsim_api['subdivision'],
+                'last_rating_change' => $vatsim_api['lastratingchange'],
+            ]);
+        };
     }
 
     /**
@@ -50,11 +73,7 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        if (is_null($user)) return redirect('/our-team')->with('error', 'Team Member could not be found. Please try again.');
-
-        //VATSIM Server Details
-        return view ('team.team-show')->with('user', $user);
+        //
     }
 
     /**

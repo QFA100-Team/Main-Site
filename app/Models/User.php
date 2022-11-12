@@ -10,7 +10,16 @@ class User extends Model
     //Table Name
     protected $table = 'users';
 
+    //Primary Key
+    public $primaryKey = 'id';
+    //Timestamps
+    public $timestamps = true;    
+
     public function staff_details(){
         return $this->hasOne(Staff::class, 'u_id', 'id');
+    }
+
+    public function vatsim_details(){
+        return $this->hasOne(VATSIM::class, 'cid', 'vatsim_cid');
     }
 }

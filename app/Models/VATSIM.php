@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class VATSIM extends Model
 {
     use HasFactory;
 
-    //Table Name
-    protected $table = 'staff_roles';
+    protected $table = 'vatsim_db';
+
+    public $primaryKey = 'cid';
 }
