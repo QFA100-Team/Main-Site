@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\News;
 use App\Models\User;
+use App\Models\Staff;
 
-class NewsController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,10 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //return News::all();
-        $news = News::orderBy('id', 'desc')->simplePaginate(5);
-        return view('news.news-index')->with('news', $news);
+        $staff = User::all()->where('is_staff', 1);
+        $pilot = User::all()->where('is_pilot', 1)->where('is_staff', 0);
+        //return User::with('staff_details')->get();
+        return view('team.team-index')->with('staff', $staff)->with('pilot', $pilot);
     }
 
     /**
@@ -49,11 +50,11 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //return News::with('author')->with('author_roles')->get();
-        $news = News::find($id);
-        if (is_null($news)) return redirect('/news')->with('error', 'News article could not be found.');
+        $user = User::find($id);
+        if (is_null($user)) return redirect('/our-team')->with('error', 'Team Member could not be found. Please try again.');
 
-        return view('news.news-show')->with('news', $news);
+        //VATSIM Server Details
+        return view ('team.team-show')->with('user', $user);
     }
 
     /**

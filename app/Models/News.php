@@ -13,4 +13,15 @@ class News extends Model
     public $primaryKey = 'id';
     //Timestamps
     public $timestamps = true;
+
+    //Get Author Details of News Post
+    public function author(){
+        return $this->hasOne(User::class, 'id', 'author_id');
+    }
+
+    //Gain Access to staff_roles from users tab
+    public function author_roles()
+    {
+        return $this->hasOne(Staff::class, 'u_id', 'author_id')->withDefault();
+    }
 }

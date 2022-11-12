@@ -13,15 +13,6 @@
 
 @section('content')
 
-{{$news}}
-<br><br>
-{{$author}}
-<br><br>
-
-<!-- Change Collections to Objects -->
-@foreach ($author as $author) @endforeach
-
-
 <div class="row">
     <!-- Post Details -->
     <div class="col-md-8">
@@ -40,16 +31,17 @@
                 <div class="card">
                     <h5 class="card-header h5">Post Details: </h5>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><b>Type:</b> {{$news->news_type}}</li>
-                      <li class="list-group-item"><b>Posted:</b> {{$news->created_at}}</li>
+                      <li class="list-group-item"><b>Type:</b> <x>{{$news->news_type}}</li>
+                      <li class="list-group-item"><b>Posted:</b> {{$news->created_at->format('d/m/Y')}}</li>
+                      @empty($news->updated_at) @else <li class="list-group-item"><b>Last Updated:</b> {{$news->updated_at->format('d/m/Y')}}</li> @endempty
                     </ul>
                 </div><br>
 
                 <div class="card">
                     <h5 class="card-header h5">Author Details</h5>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><b>Name:</b> <a style="color:inherit; text-decoration: none;" target="_blank" href="{{config('app.url')}}/our-team/qfa{{$author->user_uid}}">{{$author->name}} - QFA{{$author->user_uid}}</a></li>
-                      <li class="list-group-item"><b>Staff Position: </b> {{$author->staff_pos}} </li>
+                      <li class="list-group-item"><b>Name:</b> <a style="color:inherit; text-decoration: none;" target="_blank" href="{{config('app.url')}}/our-team/{{$news->author->u_callsign}}">{{$news->author->display_name}} - {{Str::upper($news->author->u_callsign)}}</a></li>
+                      <li class="list-group-item"><b>Position:</b> <x style="color: #{{$news->author_roles->title_color}}">{{$news->author_roles->title}}</x></li>
                     </ul>
                   </div>
 
