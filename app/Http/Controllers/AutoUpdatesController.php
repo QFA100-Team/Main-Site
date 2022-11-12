@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use App\Models\VATSIM;
+use App\Models\VATSIMOnline;
+
+//All of these jobs are executed by cron-jobs.org to save on Website Resources. Access from Joshua Micallef.
 
 class AutoUpdatesController extends Controller
 {
@@ -14,24 +17,16 @@ class AutoUpdatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dbupdate()
+    public function vatsim_user_update()
     {
         $user = User::all();
 
         foreach($user as $user){
             $id = $user->vatsim_cid;
 
-            $vatsim_api = Http::get("api.vatsim.net/api/ratings/$id")->json();
             //return $vatsim_api;
+            $vatsim_api = Http::get("api.vatsim.net/api/ratings/$id")->json();
 
-            //Values from Search
-            $cid = $vatsim_api['id'];
-            $rating = $vatsim_api['rating'];
-            $pilotrating = $vatsim_api['pilotrating'];
-            $region = $vatsim_api['region'];
-            $division = $vatsim_api['division'];
-            $subdivision = $vatsim_api['subdivision'];
-            $last_rating = $vatsim_api['lastratingchange'];
 
             VATSIM::where('cid', $id)->update([
                 'atc_rating' => $vatsim_api['rating'],
@@ -49,9 +44,10 @@ class AutoUpdatesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function users_online()
     {
-        //
+
+    
     }
 
     /**

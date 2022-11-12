@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Staff;
+use App\Models\VATSIM;
 
 class TeamController extends Controller
 {
@@ -17,7 +18,7 @@ class TeamController extends Controller
     {
         $staff = User::all()->where('is_staff', 1);
         $pilot = User::all()->where('is_pilot', 1)->where('is_staff', 0);
-        //return User::with('staff_details')->get();
+        //return VATSIM::with('pilot_ratings')->get();
         return view('team.team-index')->with('staff', $staff)->with('pilot', $pilot);
     }
 

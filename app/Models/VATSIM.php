@@ -9,7 +9,15 @@ class VATSIM extends Model
 {
     use HasFactory;
 
-    protected $table = 'vatsim_db';
+    protected $table = 'vatsim_users';
 
     public $primaryKey = 'cid';
+
+    public function pilot_ratings(){
+        return $this->hasOne(Rating::class, 'id', 'pilot_rating');
+    }
+
+    public function atc_ratings(){
+        return $this->hasOne(Rating::class, 'id', 'atc_rating');
+    }
 }

@@ -40,7 +40,7 @@
                 <div class="card">
                     <h5 class="card-header h5">Author Details</h5>
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><b>Name:</b> <a style="color:inherit; text-decoration: none;" target="_blank" href="{{config('app.url')}}/our-team/{{$news->author->u_callsign}}">{{$news->author->display_name}} - {{Str::upper($news->author->u_callsign)}}</a></li>
+                      <li class="list-group-item"><b>Name:</b> <a style="color:inherit; text-decoration: none;" target="_blank" href="{{config('app.url')}}/our-team/{{$news->author->id}}">{{$news->author->display_name}} - {{Str::upper($news->author->u_callsign)}}</a></li>
                       <li class="list-group-item"><b>Position:</b> <x style="color: #{{$news->author_roles->title_color}}">{{$news->author_roles->title}}</x></li>
                     </ul>
                   </div>
