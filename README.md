@@ -2,7 +2,7 @@
 
 **ToDo**
 - DBs to be made
-- - Users (Auto Assigned Pilot Access)
+- - Users
     - user_uid (AutoAssigned)
     - Name
     - display_name (Editable by User)
@@ -25,7 +25,17 @@
       - 3=operations, 
       - 4=tech, 
       - 5=admin
-SQL::: 
+
+- - Staff
+    - id
+    - u_id
+    - position
+    - power
+    - title
+    - description
+    - marketing_dep
+    - ops_dep
+    - tech_dep
 
 - - Pilots Details 
     - WF2019

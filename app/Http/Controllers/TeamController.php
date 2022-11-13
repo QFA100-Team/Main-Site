@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Staff;
-use App\Models\VATSIM;
+use App\Models\VATSIMUsers;
 
 class TeamController extends Controller
 {
@@ -54,7 +54,6 @@ class TeamController extends Controller
         $user = User::find($id);
         if (is_null($user)) return redirect('/our-team')->with('error', 'Team Member could not be found. Please try again.');
 
-        //VATSIM Server Details
         return view ('team.team-show')->with('user', $user);
     }
 

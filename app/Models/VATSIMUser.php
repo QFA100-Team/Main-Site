@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VATSIM extends Model
+class VATSIMUser extends Model
 {
     use HasFactory;
 
@@ -14,10 +14,10 @@ class VATSIM extends Model
     public $primaryKey = 'cid';
 
     public function pilot_ratings(){
-        return $this->hasOne(Rating::class, 'id', 'pilot_rating');
+        return $this->hasOne(VATSIMRating::class, 'id', 'pilot_rating');
     }
 
     public function atc_ratings(){
-        return $this->hasOne(Rating::class, 'id', 'atc_rating');
+        return $this->hasOne(VATSIMRating::class, 'id', 'atc_rating');
     }
 }

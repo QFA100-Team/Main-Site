@@ -43,9 +43,25 @@
         </div><br>
     </div>
     
+    
 
     <!-- Author Details -->
-    <div class="col-md-4">
+        <div class="col-md-4">
+            <!-- User is a Staff Member -->
+                @empty($user->staff_details->position) @else 
+                <div class="card"  style="text-align: center;">
+                    <h5 class="card-header h5">Staff Details </h5>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Position: </b> <x style="color: #{{$user->staff_details->title_color}}">{{$user->staff_details->title}}</x> <x></li>
+                    <li class="list-group-item" style="20px;text-align: center;"><b>Departments: </b> 
+                        <span class="badge badge-pill badge-secondary">{{$user->staff_details->tech_dep}} </span>
+                        <span class="badge badge-pill badge-secondary">{{$user->staff_details->ops_dep}} </span>
+                        <span class="badge badge-pill badge-secondary">{{$user->staff_details->marketing_dep}} </span>
+                    </li>
+                    </ul>
+                </div><br>
+                @endempty
+                
                 <div class="card"  style="text-align: center;">
                     <h5 class="card-header h5">VATSIM Stats </h5>
                     <ul class="list-group list-group-flush">
@@ -56,26 +72,10 @@
                       <li class="list-group-item"><b>Division: </b><span class="badge badge-pill badge-secondary">{{$user->vatsim_details->division}}</li>
                         @empty($user->vatsim_details->subdivision) @else <li class="list-group-item"><b>vACC: </b><span class="badge badge-pill badge-secondary">{{$user->vatsim_details->subdivision}}</li> @endempty
                       <li class="list-group-item"><a style="color:inherit; text-decoration: none;" target="_blank" href="https://stats.vatsim.net/stats/{{$user->vatsim_cid}}"><i>View VATSIM Stats</i></li>   
-                    </ul>
-                    
-                </div><br>
-
-                <!-- User is a Staff Member -->
-                @empty($user->staff_details->position) @else 
-                <div class="card">
-                    <h5 class="card-header h5">Staff Details </h5>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item"><b>Position: </b> <x style="color: #{{$user->staff_details->title_color}}">{{$user->staff_details->title}}</x> <x></li>
-                      <li class="list-group-item" style="20px;text-align: center;">
-                        <span class="badge badge-pill badge-secondary">{{$user->vatsim_details->pilot_ratings->pilot_name}} </span>
-                        <span class="badge badge-pill badge-secondary">{{$user->vatsim_details->region}} </span>
-                        <span class="badge badge-pill badge-secondary">{{$user->vatsim_details->region}} </span>
-                      </li>
-                    </ul>
-                </div><br>
-                @endempty
-    </div>  
-
+                    </ul>  
+                </div>
+            <br>
+        </div>  
 </div>
 
 @endsection

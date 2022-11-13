@@ -20,6 +20,6 @@ class User extends Model
     }
 
     public function vatsim_details(){
-        return $this->hasOne(VATSIM::class, 'cid', 'vatsim_cid');
+        return $this->hasOne(VATSIMUser::class, 'cid', 'vatsim_cid');
     }
 }
