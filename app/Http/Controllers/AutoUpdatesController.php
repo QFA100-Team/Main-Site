@@ -28,7 +28,7 @@ class AutoUpdatesController extends Controller
             $vatsim_api = Http::get("api.vatsim.net/api/ratings/$id")->json();
 
 
-            VATSIMUsers::where('cid', $id)->update([
+            VATSIMUser::where('cid', $id)->update([
                 'atc_rating' => $vatsim_api['rating'],
                 'pilot_rating' => $vatsim_api['pilotrating'],
                 'region' => $vatsim_api['region'],
