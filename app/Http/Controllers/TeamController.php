@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Staff;
+use App\Models\EventDetails;
 use App\Models\VATSIMUsers;
 
 class TeamController extends Controller
@@ -18,7 +19,7 @@ class TeamController extends Controller
     {
         $staff = User::all()->where('is_staff', 1);
         $pilot = User::all()->where('is_pilot', 1)->where('is_staff', 0);
-        //return VATSIM::with('pilot_ratings')->get();
+        //return User::with('event_attendance')->with('event_details')->get();
         return view('team.team-index')->with('staff', $staff)->with('pilot', $pilot);
     }
 
@@ -53,8 +54,9 @@ class TeamController extends Controller
     {
         $user = User::find($id);
         if (is_null($user)) return redirect('/our-team')->with('error', 'Team Member could not be found. Please try again.');
-
-        return view ('team.team-show')->with('user', $user);
+        $event = EventDetails::all();
+        //return User::with('event_attendance')->get();
+        return view ('team.team-show')->with('user', $user)->with('event', $event);
     }
 
     /**

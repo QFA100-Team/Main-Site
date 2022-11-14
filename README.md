@@ -10,7 +10,9 @@
     - Email
     - Password
     - dob
-    - is_staff (0=no, 1=yes)
+    - is_staff 
+      - 0=no, 
+      - 1=yes
     - staff_pos (Staff Position) 
       - 0=member, 
       - 1=marketing, 

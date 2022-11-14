@@ -1,13 +1,21 @@
 @extends('Layouts.app')
 
 @section('content')
+<?php $i = -1?>
 
 @if ($message = Session::get('error'))
       <div class="alert alert-danger alert-block">
 	      <button type="button" class="close" data-dismiss="alert">×</button>	
 	      <strong>{{$message}}</strong>
       </div>
-    @endif
+@endif
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">{{$user->display_name}} - {{Str::upper($user->u_callsign)}}</h1>
+      <p class="lead">User Profile</p>
+    </div>
+  </div>
 
 <div class="row">
     <!-- Post Details -->
@@ -28,7 +36,7 @@
             <h5 class="card-header h5">Events Attended</h5>
             <div class="card-body">
                 <p class="card-text">
-                    
+                    {{$user->event_attendance}}
                 </p>
             </div>
         </div><br>
@@ -41,7 +49,7 @@
                 </p>
             </div>
         </div><br>
-    </div>
+    </div>    
     
     
 

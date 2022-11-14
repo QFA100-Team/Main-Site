@@ -22,4 +22,8 @@ class User extends Model
     public function vatsim_details(){
         return $this->hasOne(VATSIMUser::class, 'cid', 'vatsim_cid');
     }
+
+    public function event_attendance(){
+        return $this->hasManyThrough(EventAttendance::class, EventDetails::class, 'id', 'user_id', 'id', 'id');
+    }
 }
