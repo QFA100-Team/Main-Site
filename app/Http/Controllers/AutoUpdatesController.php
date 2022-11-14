@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
-use App\Models\VATSIMUsers;
+use App\Models\VATSIMUser;
 use App\Models\VATSIMOnline;
 
 //All of these jobs are executed by cron-jobs.org to save on Website Resources. Access from Joshua Micallef.
