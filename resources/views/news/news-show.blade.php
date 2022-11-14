@@ -22,7 +22,7 @@
                 <p class="card-text">{{nl2br($news->content)}}</p>
             </div>
         </div>
-        <button class="rtn-btn" href="" style="margin-top: 30px;"><i class="fa fa-home"></i> Return to All News</button>
+        <button class="rtn-btn" href="/test" style="margin-top: 30px;"><i class="fa fa-home"></i> Return to All News</button>
     </div>
     
 

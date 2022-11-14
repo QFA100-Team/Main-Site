@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EventDetails extends Model
+class Event extends Model
 {
     use HasFactory;
 
+    //Table Name
     protected $table = 'event_details';
 
+    //Primary Key
     public $primaryKey = 'id';
-
-    public function event_details(){
-        return $this->hasOne(VATSIMRating::class, 'id', 'pilot_rating');
-    }
 }

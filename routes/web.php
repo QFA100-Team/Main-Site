@@ -32,6 +32,9 @@ Route::get('admin/updates/current-online', 'AutoUpdatesController@users_online')
 //News Controller
 Route::resource('news', 'NewsController');
 
+//Event Page Controller
+Route::resource('event', 'EventsController');
+
 //User Controller
 Route::resource('account', 'UsersController');
 

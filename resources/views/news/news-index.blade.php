@@ -43,7 +43,7 @@
                         <p class="card-subtitle"><b>Catagory: </b>{{$post->news_type}}</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Posted By {{$post->author->display_name}} on the {{$post->created_at}}</small>
+                        <small class="text-muted">Posted By {{$post->author->display_name}} on the {{$post->created_at->format('d/m/Y')}}</small>
                     </div>
                     </div>
                     </a>

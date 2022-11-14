@@ -11,7 +11,7 @@
 @endif
 
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="container" style="text-align: center;">
       <h1 class="display-4">{{$user->display_name}} - {{Str::upper($user->u_callsign)}}</h1>
       <p class="lead">User Profile</p>
     </div>
@@ -21,23 +21,36 @@
     <!-- Post Details -->
     <div class="col-md-8">
         <div class="card">
-            <h5 class="card-header h5"> User Details</h5>
-            <div class="card-body">
-                <p class="card-text">
-                    User Details for {{$user->display_name}}
-                </p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><b>VATSIM CID:</b> {{$user->vatsim_cid}} </li>
-            </ul>
-        </div><br>
-
-        <div class="card">
             <h5 class="card-header h5">Events Attended</h5>
             <div class="card-body">
                 <p class="card-text">
-                    {{$user->event_attendance}}
+                    
                 </p>
+
+                <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th width="35%">Name</th>
+                          <th width="25%">Start Time</th>
+                          <th width="25%">End Time</th>
+                          <th width="15%">Link</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($itteration as $itteration)
+                        <?php $event_details = $user->event_attendance[$loop->index]->event_details?>
+                        <tr>
+                            <td>{{$event_details->name}}</td>
+                            <td>{{date('d/m/Y', strtotime($event_details->start_date))}}</td>
+                            <td>{{date('d/m/Y', strtotime($event_details->end_date))}}</td>
+                            <td><a href="/event/{{$event_details->event_url}}" class="badge badge-primary">Link</a></td>
+                          </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+
             </div>
         </div><br>
 
@@ -50,8 +63,6 @@
             </div>
         </div><br>
     </div>    
-    
-    
 
     <!-- Author Details -->
         <div class="col-md-4">
@@ -60,12 +71,11 @@
                 <div class="card"  style="text-align: center;">
                     <h5 class="card-header h5">Staff Details </h5>
                     <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Position: </b> <x style="color: #{{$user->staff_details->title_color}}">{{$user->staff_details->title}}</x> <x></li>
-                    <li class="list-group-item" style="20px;text-align: center;"><b>Departments: </b> 
-                        <span class="badge badge-pill badge-secondary">{{$user->staff_details->tech_dep}} </span>
-                        <span class="badge badge-pill badge-secondary">{{$user->staff_details->ops_dep}} </span>
-                        <span class="badge badge-pill badge-secondary">{{$user->staff_details->marketing_dep}} </span>
-                    </li>
+                    <li class="list-group-item">
+                      <x style="color: #{{$user->staff_details->title_color}}">{{$user->staff_details->title}}</x></li>
+                    @empty($user->staff_details->tech_dep) @else <li class="list-group-item" style="20px;text-align: center;"><span class="badge badge-pill badge-primary">Technology</span></li> @endempty
+                    @empty($user->staff_details->ops_dep) @else <li class="list-group-item" style="20px;text-align: center;"><span class="badge badge-pill badge-primary">Operations</span></li> @endempty
+                    @empty($user->staff_details->marketing_dep) @else <li class="list-group-item" style="20px;text-align: center;"><span class="badge badge-pill badge-primary">Marketing</span></li> @endempty
                     </ul>
                 </div><br>
                 @endempty
