@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\Staff;
-use App\Models\EventDetails;
-use App\Models\VATSIMUsers;
+use App\Models\Event;
 
-class TeamController extends Controller
+class EventsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +14,10 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $staff = User::all()->where('is_staff', 1);
-        $pilot = User::all()->where('is_pilot', 1)->where('is_staff', 0);
-        //return User::with('event_attendance')->with('event_details')->get();
-        return view('team.team-index')->with('staff', $staff)->with('pilot', $pilot);
+        $event = Event::all();
+        $itteration = $event;
+
+        return view('event.event-index')->with('event', $event)->with('itteration', $itteration);;
     }
 
     /**
@@ -52,14 +49,11 @@ class TeamController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        if (is_null($user)) return redirect('/our-team')->with('error', 'Team Member could not be found. Please try again.');
-        $event = EventDetails::all();
+        $event = Event::all()->where('event_url', $id)->flatten();
+        //remove array constraint
+        $event = $event[0];
         
-        $itteration = $user->event_attendance;
-        //return $itteration;
-        //return User::with('event_attendance')->get();
-        return view ('team.team-show')->with('user', $user)->with('event', $event)->with('itteration', $itteration);
+        return view('event.event-show')->with('event', $event);
     }
 
     /**

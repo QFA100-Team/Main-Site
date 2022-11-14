@@ -188,10 +188,10 @@
 
             <!-- WF Map -->
             <li class="nav-item">
-              <a class="nav-link" href="{{config('app.url')}}/route">
+              <a class="nav-link" href="{{config('app.url')}}/event">
                 <i class="fa fa-map-o">
                 </i>
-                Route
+                Events
               </a>
             </li>
 

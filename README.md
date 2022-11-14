@@ -1,48 +1,6 @@
 **QFA100 WorldFlight Team Website**
 
 **ToDo**
-- DBs to be made
-- - Users (Auto Assigned Pilot Access)
-    - user_uid (AutoAssigned)
-    - Name
-    - display_name (Editable by User)
-    - vatsim_cid (Integer)
-    - Email
-    - Password
-    - dob
-    - is_staff (0=no, 1=yes)
-    - staff_pos (Staff Position) 
-      - 0=member, 
-      - 1=marketing, 
-      - 2=operations, 
-      - 3=tech, 
-      - 4=founder, 
-      - 5=Executive Director,
-    - power_access (power on site) 
-      - 0=member, 
-      - 1=pilot, 
-      - 2, marketing, 
-      - 3=operations, 
-      - 4=tech, 
-      - 5=admin
-SQL::: 
-
-- - Pilots Details 
-    - WF2019
-    - WF2020
-    - WF2021
-    - WF2022
-
-- - News ~~~ DONE (Message Josh for SQL Injection Code)
-    - id {unique}
-    - title
-    - news_type
-    - author
-    - author_UID
-    - content
-    - created_at
-SQL::: 
-
 **Static Pages**
 - Homepage (/home)
 - About Us (/about-us)

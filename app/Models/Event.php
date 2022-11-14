@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VATSIM extends Model
+class Event extends Model
 {
     use HasFactory;
 
-    protected $table = 'vatsim_db';
+    //Table Name
+    protected $table = 'event_details';
 
-    public $primaryKey = 'cid';
+    //Primary Key
+    public $primaryKey = 'id';
 }
