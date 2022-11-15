@@ -34,7 +34,7 @@
                     <h4>Website Details</h4>
                     <p>This website will be the one stop shop for all things QFA100 related. Details about who is flying, when they are flying, and stats from each flight will be made available on this website.
                         <br><br>There will be additional resources required for the Pilots flying, and this site will suit that purpose!
-                        <br><br>Current Website Progress (35%)<br><progress id="file" value="35" max="100"></progress>
+                        <br><br>Current Website Progress (45%)<br><progress id="file" value="45" max="100"></progress>
                     </p>
                 </div>
             </div>

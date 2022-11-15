@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Http\RedirectResponse;
+use App\Models\User;
+use App\Models\VATSIMUser;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -27,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = "/home";
 
     /**
      * Create a new controller instance.
@@ -48,9 +54,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'f_name' => ['required', 'string', 'max:191'],
+            'l_name' => ['required', 'string', 'max:191'],
+            'vatsim_cid' => ['required', 'int', 'min:7'],
+            'dob' => ['required', 'date'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
@@ -58,14 +67,37 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Models\User
      */
     protected function create(array $data)
     {
+
+                //return $vatsim_api;
+        $vatsim_api = Http::get("api.vatsim.net/api/ratings/$data[vatsim_cid]")->json();
+    
+        $vatsim = VATSIMUser::create([
+            'cid' => $data['vatsim_cid'],
+            'atc_rating' => $vatsim_api['rating'],
+            'pilot_rating' => $vatsim_api['pilotrating'],
+            'region' => $vatsim_api['region'],
+            'division' => $vatsim_api['division'],
+            'subdivision' => $vatsim_api['subdivision'],
+            'last_rating_change' => $vatsim_api['lastratingchange'],
+        ]);
+        $vatsim->save();
+
         return User::create([
-            'name' => $data['name'],
+            'f_name' => $data['f_name'],
+            'l_name' => $data['l_name'],
+            'display_name' => $data['f_name']." ".$data['l_name'],
+            'name_url' => Str::lower($data['f_name'])."-".Str::lower($data['l_name']),
+            'vatsim_cid' => $data['vatsim_cid'],
+            'dob' => $data['dob'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
+            'is_pilot' => 0,
+            'is_staff' => 0,
+            'is_approved' => 0,
         ]);
     }
 }

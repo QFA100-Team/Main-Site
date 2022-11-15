@@ -11,6 +11,16 @@ class VATSIMUser extends Model
 
     protected $table = 'vatsim_users';
 
+    protected $fillable = [
+        'cid',
+        'atc_rating',
+        'pilot_rating',
+        'region',
+        'division',
+        'subdivision',
+        'last_rating_change',
+    ];
+
     public $primaryKey = 'cid';
 
     public function pilot_ratings(){
