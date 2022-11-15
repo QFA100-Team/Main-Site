@@ -27,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('news.news-create');
     }
 
     /**
@@ -38,7 +38,18 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+
+        //Create News Article
+        $news = new News;
+        $news->title = $request->input('title');
+        $news->content = $request->input('content');
+        $news->save();
+
+        return redirect('/news')->with('success', 'News Article Created');
     }
 
     /**
