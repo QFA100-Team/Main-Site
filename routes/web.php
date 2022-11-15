@@ -40,3 +40,6 @@ Route::resource('account', 'UsersController');
 
 //our-team Controller
 Route::resource('our-team', 'TeamController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

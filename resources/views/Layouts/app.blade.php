@@ -205,22 +205,30 @@
           </ul>
 
           <ul class="navbar-nav ">
-            <!-- Login/Signup -->
+            @if(Auth::guest())
+            <!-- Login/Signup if not logged in-->
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">
+              <a class="nav-link " href="/login">
                 <i class="fa fa-user-circle-o">
                 </i>
-                Login/Signup (WIP)
+                Login/Register
               </a>
             </li>
 
-            <!-- Account Button -->
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">
-                <i class="fa fa-user-circle-o">
+            @else
+            <!-- My Account & Notifications -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-users">
                 </i>
-                Account (WIP)
+                My Account
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                <a class="dropdown-item" href="#">Page Edits</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+              </div>
             </li>
 
             <li class="nav-item">
@@ -231,6 +239,9 @@
                 Notifications
               </a>
             </li>
+            @endif
+
+            
 
             <!-- Twitch Link -->
           <li class="nav-item">

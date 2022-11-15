@@ -19,7 +19,7 @@
         <div class="card">
             <h5 class="card-header h5">{{$news->title}}</h5>
             <div class="card-body">
-                <p class="card-text">{{nl2br($news->content)}}</p>
+                <p class="card-text">{!!$news->content!!}</p>
             </div>
         </div>
         <button class="rtn-btn" href="/test" style="margin-top: 30px;"><i class="fa fa-home"></i> Return to All News</button>
