@@ -10,13 +10,12 @@
 
     <div class="form-group">
         {{Form::label('content', 'Content')}}
-        {{Form::text('content', '', ['id' => 'detailededitor', 'class' => 'form-control', 'placeholder' => 'News Content'])}}
+        <textarea name="content">
+            Content for Article.
+         </textarea>
     </div>
 
-    <form method="post">
-        <textarea id="myeditorinstance">Hello, World!</textarea>
-      </form>
-
+    <input class="id" name="author_id"></input>
     {{Form::submit('Submit', ['class' =>'btn btn-primary'])}}
 {!! Form::close() !!}
 @endsection

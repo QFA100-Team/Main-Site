@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,7 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
-        
+        <script src="https://cdn.tiny.cloud/1/nw91byr1as4hmu04oukdb8aq4rdbclr596fv0xi16i28y6bm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
         
         <!-- Navbar Links -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -281,6 +282,7 @@
 
     <body>
         <div class="container" style="margin-top: 50px;">
+            @extends('Layouts.script')
             @yield('content')
         </div>
     </body>
