@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Staff;
+use App\Models\EventAttendance;
 use App\Models\EventDetails;
 use App\Models\VATSIMUsers;
 
@@ -57,9 +58,12 @@ class TeamController extends Controller
         $event = EventDetails::all();
         
         $itteration = $user->event_attendance;
+        $newsitteration = $user->news_articles;
         //return $itteration;
-        //return User::with('event_attendance')->get();
-        return view ('team.team-show')->with('user', $user)->with('event', $event)->with('itteration', $itteration);
+        //return $newsitteration;
+        //return User::with('news_articles')->get();
+        
+        return view ('team.team-show')->with('user', $user)->with('event', $event)->with('itteration', $itteration)->with('newsitteration', $newsitteration);
     }
 
     /**

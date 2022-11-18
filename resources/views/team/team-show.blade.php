@@ -1,21 +1,6 @@
 @extends('Layouts.app')
 
 @section('content')
-<?php $i = -1?>
-
-@if ($message = Session::get('error'))
-      <div class="alert alert-danger alert-block">
-	      <button type="button" class="close" data-dismiss="alert">×</button>	
-	      <strong>{{$message}}</strong>
-      </div>
-@endif
-
-<div class="jumbotron jumbotron-fluid">
-    <div class="container" style="text-align: center;">
-      <h1 class="display-4">{{$user->display_name}} - {{Str::upper($user->u_callsign)}}</h1>
-      <p class="lead">User Profile</p>
-    </div>
-  </div>
 
 <div class="row">
     <!-- Post Details -->
@@ -54,14 +39,30 @@
             </div>
         </div><br>
 
+        @empty($user->staff_details->position) @else 
         <div class="card">
             <h5 class="card-header h5">News Posts</h5>
             <div class="card-body">
-                <p class="card-text">
-                    
-                </p>
+              @foreach($newsitteration as $newsitteration)
+              <?php $newsposted = $user->news_articles[$loop->index]?>
+              <a class="custom-card" href="/news/{{$newsposted->id}}" style="color:inherit; text-decoration: none;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <h5 class="card-title">{{$newsposted->title}}</h5>
+                      <small class="float-right text-muted">Posted on the {{$newsposted->created_at->format('d/m/Y')}}</small>  
+                      <p class="card-subtitle"><b>Catagory: </b><x style="color: #{{$newsposted->news_type->color}}">{{$newsposted->news_type->name}}</x></p>
+                    </li>
+                  </ul>
+                </a>
+              @endforeach
             </div>
-        </div><br>
+            
+        </div>
+        @endempty
+              
+             
+
+        <br>
     </div>    
 
     <!-- Author Details -->

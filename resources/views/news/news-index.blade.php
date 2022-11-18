@@ -51,7 +51,7 @@
                     <div class="card-footer">
                         <small class="text-muted">Posted By {{$post->author->display_name}} on the {{$post->created_at->format('d/m/Y')}}</small>
                         @if(auth()->user()) @if(auth()->user()->staff_details->power > 1)
-                        <a style="color:inherit; text-decoration: none;"class="float-right text-muted" href="/news/{{$post->id}}/edit"><i>Edit Post</i></a>
+                        <a style="color:inherit; text-decoration: none;" class="float-right text-muted" href="/news/{{$post->id}}/edit"><i>Edit Post</i></a>
                         @endif
                         @endif
                     </div>
