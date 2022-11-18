@@ -14,9 +14,10 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $event = EventDetails::all();
-        $itteration = $event;
+        $event = EventDetails::orderBy('id', 'desc')->simplePaginate(4);
 
+        $itteration = $event;
+        //return EventDetails::with('event_type')->get();
         return view('event.event-index')->with('event', $event)->with('itteration', $itteration);;
     }
 
@@ -50,9 +51,12 @@ class EventsController extends Controller
     public function show($id)
     {
         $event = EventDetails::all()->where('event_url', $id)->flatten();
+
+        //return if event doesnt exist;
+        if (count($event) == 0) return redirect('/event')->with('error', 'Event could not be found. Please try again.');
+        
         //remove array constraint
         $event = $event[0];
-        
         return view('event.event-show')->with('event', $event);
     }
 

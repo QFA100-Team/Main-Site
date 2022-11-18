@@ -16,4 +16,8 @@ class EventDetails extends Model
     public function event_details(){
         return $this->hasOne(VATSIMRating::class, 'id', 'pilot_rating');
     }
+
+    public function event_type(){
+        return $this->hasOne(EventType::class, 'id', 'type');
+    }
 }

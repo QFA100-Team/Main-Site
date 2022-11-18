@@ -16,7 +16,7 @@
     <body>
         <!-- Opening Discussion Text (In Grey) -->
         <div class="jumbotron text-center">
-            <img style="align: center; max-width: 25%;" src="https://cdn.discordapp.com/attachments/651917468251455497/1005605946623533126/unknown_15.png">
+            <img style="align: center; max-width: 50%;" src="https://cdn.discordapp.com/attachments/613736294572621845/1035761594585591858/unknown.png">
             <h1>QFA100 Team!</h1>
             <h3>WorldFlight 2023</h3>
             <p>
@@ -34,7 +34,7 @@
                     <h4>Website Details</h4>
                     <p>This website will be the one stop shop for all things QFA100 related. Details about who is flying, when they are flying, and stats from each flight will be made available on this website.
                         <br><br>There will be additional resources required for the Pilots flying, and this site will suit that purpose!
-                        <br><br>Current Website Progress (45%)<br><progress id="file" value="45" max="100"></progress>
+                        <br><br>Current Website Progress (55%)<br><progress id="file" value="55" max="100"></progress>
                     </p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         <br><br>Access our brand new News section <a href="#">here</a>
                     </p>
                 </div>
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <h4>Watch WorldFlight 2022</h4>
                     <p>Watch some of the simulators during WorldFlight 2022 below
                         <ul>
@@ -58,7 +58,7 @@
                             <li>WorldFlight Australia - <a href="https://www.twitch.tv/qfa25" target="_blank">QFA25</a></li>
                         </ul>
                     </p>
-                </div>
+                </div>-->
             </div> 
             <!-- Second row of details (links)
             <div style="align: center;" class="row">
