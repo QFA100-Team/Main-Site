@@ -282,7 +282,8 @@
 
     <body>
         <div class="container" style="margin-top: 50px;">
-            @extends('Layouts.script')
+          @include('Layouts.messages')  
+          @extends('Layouts.script')
             @yield('content')
         </div>
     </body>

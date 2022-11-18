@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Event;
+use App\Models\EventDetails;
 
 class EventsController extends Controller
 {
@@ -14,7 +14,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $event = Event::all();
+        $event = EventDetails::all();
         $itteration = $event;
 
         return view('event.event-index')->with('event', $event)->with('itteration', $itteration);;
@@ -49,7 +49,7 @@ class EventsController extends Controller
      */
     public function show($id)
     {
-        $event = Event::all()->where('event_url', $id)->flatten();
+        $event = EventDetails::all()->where('event_url', $id)->flatten();
         //remove array constraint
         $event = $event[0];
         

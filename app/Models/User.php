@@ -36,7 +36,7 @@ class User extends Authenticatable
     public $timestamps = true;   
 
     public function staff_details(){
-        return $this->hasOne(Staff::class, 'u_id', 'id');
+        return $this->hasOne(Staff::class, 'u_id', 'id')->withDefault();
     }
 
     public function vatsim_details(){

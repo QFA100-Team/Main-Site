@@ -7,15 +7,8 @@
 </script>
 @section('content')
 
-@if ($message = Session::get('error'))
-<div class="alert alert-danger alert-block">
-	<button type="button" class="close" data-dismiss="alert">×</button>	
-	<strong>{{$message}}</strong>
-</div>
-@endif
-
 <div class="row">
-    <div class="col-12" style="padding-bottom: 50px;">
+    <div class="col-9" style="padding-bottom: 50px;">
         <h1>{{config('app.name')}} News</h1>
         <p>This page is for any and all updates to the QFA100 Team. Please check here regulary if you would like to remain updated!<br>
         Options to remain updated include the following:
@@ -28,6 +21,19 @@
         Joshua Micallef<br>
         Managing Director, {{config('app.name')}}</b></p>
     </div>
+
+    @if(Auth()->user())
+    @if(Auth()->user()->staff_details->power > 1)
+    <div class="col-md-3">
+        <div class="card" style="text-align: center">
+            <h5 class="card-header h5">Admin Commands</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b><a style="color:inherit; text-decoration: none; disabled" href="news/create">Create New</a></b> </li>
+            </ul>
+        </div><br>     
+    </div>@else @endif   
+    @endif
+
 </div>
 
 <div class="row">
@@ -40,25 +46,20 @@
                     <div class="card" style="margin-bottom: 20px;">
                     <div class="card-body">
                         <h5 class="card-title">{{$post->title}}</h5>
-                        <p class="card-subtitle"><b>Catagory: </b>{{$post->news_type}}</p>
+                        <p class="card-subtitle"><b>Catagory: </b><x style="color: #{{$post->news_type->color}}">{{$post->news_type->name}}</x></p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Posted By {{$post->author->display_name}} on the {{$post->created_at->format('d/m/Y')}}</small>
+                        @if(auth()->user()) @if(auth()->user()->staff_details->power > 1)
+                        <a style="color:inherit; text-decoration: none;"class="float-right text-muted" href="/news/{{$post->id}}/edit"><i>Edit Post</i></a>
+                        @endif
+                        @endif
                     </div>
                     </div>
                     </a>
                 @endforeach
             {{$news->links()}}
         @endif        
-    </div>
-
-    <div class="col-md-3">
-            <div class="card">
-                <h5 class="card-header h5">News Options</h5>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><b><a style="color:inherit; text-decoration: none; disabled" href="#/subscribe">Email Notify</a></b> </li>
-                </ul>
-            </div><br>        
     </div>
 </div>
 

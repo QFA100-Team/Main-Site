@@ -58,12 +58,6 @@
 <h1>Meet the Team</h1>
 <p>The QFA100 Team is made up of a vast number of team members, of which all provide differering staffing capacity within the QFA100 Team profile. Every member of QFA100 is a vital, and important member of the team, and we would not be where we are right now without their time and dedication.
     <br>
-    @if ($message = Session::get('error'))
-      <div class="alert alert-danger alert-block">
-	      <button type="button" class="close" data-dismiss="alert">×</button>	
-	      <strong>{{$message}}</strong>
-      </div>
-    @endif
 </p><br>
 
 <!-- Staff Section -->

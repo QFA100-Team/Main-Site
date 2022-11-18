@@ -16,12 +16,16 @@ class News extends Model
 
     //Get Author Details of News Post
     public function author(){
-        return $this->hasOne(User::class, 'id', 'author_id');
+        return $this->hasOne(User::class, 'id', 'author_id')->withDefault();
     }
 
     //Gain Access to staff_roles from users tab
     public function author_roles()
     {
         return $this->hasOne(Staff::class, 'u_id', 'author_id')->withDefault();
+    }
+
+    public function news_type(){
+        return $this->hasOne(NewsType::class, 'id', 'type_id');
     }
 }

@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class NewsType extends Model
 {
     use HasFactory;
-
-    //Table Name
-    protected $table = 'event_details';
-
-    //Primary Key
-    public $primaryKey = 'id';
+        //Table Name
+        protected $table = 'news_type';
+        //Primary Key
+        public $primaryKey = 'id';
 }
