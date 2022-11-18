@@ -27,6 +27,7 @@
           <!-- Return to All News Button -->
           <button class="btn btn-secondary"><a href="{{config('app.url')}}/news" style="color:inherit; text-decoration: none;">Return to All News</a></button>
 
+          @if(auth()->user()) @if(auth()->user()->staff_details->power > 1)
           <!-- Delete Button -->
           <button type="button" class="btn btn-danger pull-right" data-toggle="modal" data-target="#exampleModal" style="margin-left: 10px;"> Delete </button>
           <!-- Delete Modal w/ Code -->
@@ -54,7 +55,7 @@
           </div>
 
           <!-- Edit Button -->
-          <button class="btn btn-primary pull-right"><a href="{{$news->id}}/edit" style="color:inherit; text-decoration: none;">Edit</a></button>
+          <button class="btn btn-primary pull-right"><a href="{{$news->id}}/edit" style="color:inherit; text-decoration: none;">Edit</a></button> @endif @endif
         </div>
         
     </div>

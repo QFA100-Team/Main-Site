@@ -227,7 +227,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                <a class="dropdown-item" href="#">Page Edits</a>
+                <a class="dropdown-item disabled" href="#">My Data</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Logout') }}</a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
               </div>
@@ -243,6 +243,25 @@
             </li>
             @endif
 
+          @if(auth()->user()) @if(auth()->user()->staff_details->power > 3)
+            <!-- Administration Button -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-users">
+                </i>
+                Admin Actions
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">User List</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Flight Roster</a>
+                <a class="dropdown-item" href="#">Events Admin</a>
+                <a class="dropdown-item" href="#">Page Editor</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Admin Dashboard</a>
+              </div>
+            </li>
+          @endif @endif
             
 
             <!-- Twitch Link -->
@@ -253,21 +272,7 @@
               Watch our Stream
             </a>
           </li>
-
-          <!-- Administration Button -->
-          <li class="nav-item dropdown">
-            <a class="nav-link disabled dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-users">
-              </i>
-              Admin Actions
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">User List</a>
-              <a class="dropdown-item" href="#">Page Edits</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">xxx</a>
-            </div>
-          </li>
+         
 
           <!-- Search Button
           <form class="form-inline my-2 my-lg-0">
