@@ -20,4 +20,8 @@ class EventDetails extends Model
     public function event_type(){
         return $this->hasOne(EventType::class, 'id', 'type');
     }
+
+    public function roster_schedule(){
+        return $this->hasMany(EventSchedule::class, 'event_id', 'id');
+    }
 }

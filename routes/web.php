@@ -28,6 +28,8 @@ Route::get('/pilot-roster', 'PagesController@roster');
 Route::get('admin/updates/vatsim-db', 'AutoUpdatesController@vatsim_user_update');
 Route::get('admin/updates/current-online', 'AutoUpdatesController@users_online');
 
+//EventUpdates
+Route::get('admin/updates/schedule-add', 'EventsController@schedule_add');
 
 //News Controller
 Route::resource('news', 'NewsController');
