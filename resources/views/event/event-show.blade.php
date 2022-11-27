@@ -76,8 +76,8 @@
                                 @endif
                                 
                             </td>
-                          <td>{{$event->roster_schedule[0]->route}}</td>
-                          <td>{{$event->roster_schedule[0]->distance}}</td>
+                          <td>{{$roster->route}}</td>
+                          <td>{{$roster->distance}}</td>
                         </tr>
                         @endforeach
                     </tbody>

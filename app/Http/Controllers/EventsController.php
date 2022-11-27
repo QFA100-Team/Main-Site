@@ -52,11 +52,12 @@ class EventsController extends Controller
     public function show($id)
     {
         $event = EventDetails::all()->where('event_url', $id)->flatten();
+        if (count($event) == 0) return redirect('/event')->with('error', 'Event could not be found. Please try again.');
         $itteration = $event[0]->roster_schedule;
         //return $itteration;
 
         //return if event doesnt exist;
-        if (count($event) == 0) return redirect('/event')->with('error', 'Event could not be found. Please try again.');
+        
         
         //remove array constraint
         $event = $event[0];
